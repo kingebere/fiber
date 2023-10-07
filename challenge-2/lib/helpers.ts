@@ -484,7 +484,9 @@ export const crawlSites = async (companiesUrls: string[]) => {
 /**
  * This function creates and adds data into JSON
  *
- * @param {Array , Array, string} folderName  - The first number.
+ * @param {string} folderName  - The first number.
+ * @param {Array} scrapedData
+ * @param {string} FileName
  * @returns {void}
  */
 export const writeJSONToFile = async (

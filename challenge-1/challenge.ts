@@ -68,20 +68,37 @@ async function batchInsertDataWithProgress(
       `Inserting data to the ${tableName} table [:bar] :percent :etas`,
       "*"
     )
-
+    let currentIndex = 0
     // Transactions helps with memory efficiency,
     //allow you to work with data in smaller batches ,
     // committing each batch individually within the transaction.
     //This approach reduces the amount of memory needed because
     //you don't have to load and process the entire dataset at once.
     //Source - ChatGPT and Knex docs
-    await db.transaction(async (trx: any) => {
-      for (let i = 0; i < data.length; i += chunkSize) {
-        const chunk = data.slice(i, i + chunkSize)
-        await trx(tableName).insert(chunk)
-        // Update the progress bar
-        bar.tick()
+
+    async function insertChunkRecursive(
+      trx: any,
+      data: OrganizationCSVRow[] | CustomerCSVRow[],
+      tableName: string
+    ) {
+      const chunk = data.slice(currentIndex, currentIndex + chunkSize)
+      if (chunk.length === 0) {
+        //if  All chunks have been processed, exit recursion
+        return
       }
+
+      await trx(tableName).insert(chunk)
+
+      bar.tick()
+
+      currentIndex += chunkSize
+
+      // Recursively insert the next chunk
+      await insertChunkRecursive(trx, data, tableName)
+    }
+
+    await db.transaction(async (trx: any) => {
+      await insertChunkRecursive(trx, data, tableName)
     })
   } catch (error) {
     // If we get here, that means that the insert, didnt take place.
