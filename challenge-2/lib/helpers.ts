@@ -26,7 +26,7 @@ interface scrapedDataInterface {
     pageLink: string | null
   }[]
 }
-;[]
+
 
 /**
  * This function validates gets the file size
@@ -356,6 +356,38 @@ export const crawlSites = async (companiesUrls: string[]) => {
   //1. https://crawlee.dev/docs/quick-start#playwrightcrawler, It was mentioned to be a successor to Puppeteer
   //2. Something new to try out
   const crawler = new PlaywrightCrawler({
+
+    // this is the default configuration for using
+    //browser fingerprints, which is a collection of browser attributes 
+    // that can show if our browser is a bot or a real user. 
+    //https://crawlee.dev/docs/guides/avoid-blocking
+    //Since we already have it out-of-the-box by Crawlee, I decided to comment it out
+    //For now, it shows the error "Cannot access ambient const enums when 'isolatedModules' is enabled."
+    //Because our isolatedModules in the tsconfig.ts is set to true
+    //If, I set it to false , it fixes it . But why would I want to do that?
+    //Didnt see any fix for that . Crawlee has to look into it . I will raise a Github issue on that
+    //And it does even help that a search for Crawlee returns search results for Crawler .
+    // Thats why Branding is very important, a very key feature when I chose https://uiland.design
+    // as the domain name for my project . I worked the SEO and now I easily rank for Ui land , uiland even above ui.land
+    // created by designer at Vercel. I also got it to rank number one for big keywords like "uber app screens" etc
+
+  //   browserPoolOptions: {
+  //     useFingerprints: true, 
+  //     fingerprintOptions: {
+  //         fingerprintGeneratorOptions: {
+  //             browsers: [{
+  //                 name: BrowserName.edge,
+  //                 minVersion: 96,
+  //             }],
+  //             devices: [
+  //                 DeviceCategory.desktop,
+  //             ],
+  //             operatingSystems: [
+  //                 OperatingSystemsName.windows,
+  //             ],
+  //         },
+  //     },
+  // },
     async requestHandler({ page, request, enqueueLinks }) {
       await clickLaunchButton(enqueueLinks)
 

@@ -2,7 +2,7 @@ import clc from "cli-color"
 import figlet from "figlet"
 import ProgressBar from "progress"
 // import { ProxyConfiguration} from "crawlee";
-import util from "util"
+import util from "node:util"
 
 // Promisify the figlet function to work with async/await
 const figletPromise = util.promisify(figlet)
