@@ -27,7 +27,7 @@ export const printWelcomeMessage = async (message: string) => {
 
 // // const proxyConfiguration = new ProxyConfiguration({
 // //   proxyUrls: [
-// //       'http://groups-BUYPROXIES94952:apify_proxy_ljBya4qHO0Zc7R3MQghbDif6ecVhEv0GA7de@proxy.apify.com:8000'
+// //       'process.REACT_PROXY_KEYS'
 // //   ],
 // // });
 // return proxyConfiguration
