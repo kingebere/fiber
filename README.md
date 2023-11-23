@@ -1,6 +1,6 @@
-# Fiber AI's engineering interview challenges
+# Postman's engineering interview challenges
 
-Welcome! We're excited to be considering you for a full-stack engineering role at Fiber AI. This folder (which will be the basis for a private GitHub repository) contains several engineering challenges for you to complete over the next few days.
+Welcome! We're excited to be considering you for a full-stack engineering role at Postman. This folder (which will be the basis for a private GitHub repository) contains several engineering challenges for you to complete over the next few days.
 
 ## What's inside
 
@@ -22,7 +22,7 @@ Before starting this challenge, you should be familiar with:
 - React
 - SQL
 
-Each challenge will introduce new tools and libraries, but you aren't expected to be familiar with them already. They're straightforward enough that you should be able to pick them up on the fly. We use these exact same tools inside Fiber AI, so if you end up joining the team, you'll be well prepared for the job.
+Each challenge will introduce new tools and libraries, but you aren't expected to be familiar with them already. They're straightforward enough that you should be able to pick them up on the fly. We use these exact same tools inside Postman, so if you end up joining the team, you'll be well prepared for the job.
 
 ## Tooling
 
@@ -48,7 +48,7 @@ We use Stack Overflow and ChatGPT on the job, so you're allowed to use them as p
 
 ## Submission
 
-You probably got this code as a ZIP file that you unzipped. You should upload this to a new private GitHub repository and start working on it there. Once you're done with the challenge, invite the `fiberai` account as a collaborator on your repository and ping the Fiber team to let us know you're done. We'll then start reviewing your work!
+You probably got this code as a ZIP file that you unzipped. You should upload this to a new private GitHub repository and start working on it there. Once you're done with the challenge, invite the `Postman` account as a collaborator on your repository and ping the Postman team to let us know you're done. We'll then start reviewing your work!
 
 ## Questions?
 
